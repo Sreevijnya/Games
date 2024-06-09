@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+      :root {
+        --bg-color: #516dff;
+        --hover-bg-color: rgba(255, 255, 255, 0.1);
+        --transition-speed: 0.8s;
+      }
+
+      body {
+        font-family: "Press Start 2P", sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--bg-color);
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        width: 80%;
+        height: 80%;
+        perspective: 1000px;
+      }
+
+      .split {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all var(--transition-speed) ease-in-out;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .split:hover {
+        background-color: var(--hover-bg-color);
+        transform: scale(1.05);
+      }
+
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        opacity: 0;
+        transition: opacity var(--transition-speed) ease-in-out;
+      }
+
+      .content h1 {
+        font-size: 2.5rem;
+        color: #d7e4ff;
+      }
+
+      .content .btn {
+        color: #516dff;
+        border: #516dff solid 0.2rem;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+      }
+      .vertical-text {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        text-align: center;
+        color: white;
+        padding-right: 60px;
+      }
+    </style>
+    <title>Four Split Layout</title>
+  </head>
+  <body>
+    <div class="vertical-text">
+      <div>G</div>
+      <div>A</div>
+      <div>M</div>
+      <div>E</div>
+      <div>S</div>
+    </div>
+    <br />
+    <div class="container">
+      <div
+        class="split"
+        style="
+          background-image: url('https://e0.pxfuel.com/wallpapers/37/519/desktop-wallpaper-angry-birds-windows-cool-for-me-angry-birds-red.jpg');
+        "
+      >
+        <div class="content">
+          <h1>Bird catch</h1>
+          <a href="./bird catch game/index3.html" class="btn">Play now</a>
+        </div>
+      </div>
+      <div
+        class="split"
+        style="
+          background-image: url('https://repository-images.githubusercontent.com/380578210/b2d07300-d82f-11eb-8652-2e26311c7670');
+        "
+      >
+        <div class="content">
+          <h1>Breakout</h1>
+          <a href="./breakout game/index4.html" class="btn">Play now</a>
+        </div>
+      </div>
+      <div
+        class="split"
+        style="
+          background-image: url('https://t4.ftcdn.net/jpg/02/62/24/45/360_F_262244537_RjHfRBucxPyo7o6QetIAQYpd5O3h6cEN.jpg');
+        "
+      >
+        <div class="content">
+          <h1>Hangman</h1>
+          <a href="./hangman game/index.html" class="btn">Play now</a>
+        </div>
+      </div>
+      <div
+        class="split"
+        style="
+          background-image: url('https://i.pinimg.com/originals/f1/aa/4c/f1aa4cd0124c9ed23301548a6344c2c6.jpg');
+        "
+      >
+        <div class="content">
+          <h1>Typer</h1>
+          <a href="./typing game/index2.html" class="btn">Play now</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const splits = document.querySelectorAll(".split");
+
+      splits.forEach((split) => {
+        split.addEventListener("mouseenter", () => {
+          split.querySelector(".content").style.opacity = "1";
+        });
+
+        split.addEventListener("mouseleave", () => {
+          split.querySelector(".content").style.opacity = "0";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+:root {
+  --background-color: #516dff;
+  --primary-color: #ffffff;
+  --secondary-color: #9a8c98;
+  --highlight-color: #c9ada7;
+  --text-color: #ffffff;
+  --button-color: #516dff;
+  --hover-color: #f7f1e3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Press Start 2P", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+canvas {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  max-width: 800px;
+  width: 90vw;
+  height: 60vh;
+  margin: 20px 0;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  background-color: var(--text-color);
+  color: var(--button-color);
+  border-radius: 5px;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.rules-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  width: 400px;
+  padding: 3rem;
+  line-height: 1.5;
+  transform: translateX(-400px);
+  transition: transform 1s ease-in-out;
+}
+
+.rules.show {
+  transform: translateX(0);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Catch The Angry Bird</title>
+  </head>
+  <body>
+    <div class="screen">
+      <h1>Catch The Angry Bird</h1>
+      <button class="btn" id="start-btn">Play Game</button>
+    </div>
+    <div class="screen">
+      <h1>What is your "favorite" Angry Bird?</h1>
+      <ul class="characters-list">
+        <li>
+          <button class="choose-character-btn">
+            <p>Red</p>
+            <img
+              src="https://www.freeiconspng.com/thumbs/angry-birds-png/angry-birds-png-images-free-download-1.png"
+              alt="Red"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="choose-character-btn">
+            <p>Chuck</p>
+            <img
+              src="https://www.freeiconspng.com/thumbs/angry-birds-png/angry-birds-images-free-download-9.png"
+              alt="Chuck"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="choose-character-btn">
+            <p>Bomb</p>
+            <img
+              src="https://www.freeiconspng.com/uploads/best-free-angry-birds-png-image-0.png"
+              alt="Bomb"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="choose-character-btn">
+            <p>Matilda</p>
+            <img
+              src="https://www.freeiconspng.com/uploads/angry-birds-transparent-background-2.png"
+              alt="Matilda"
+            />
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="screen game-container" id="game-container">
+      <h3 id="time" class="time">Time: 00:00</h3>
+      <h3 id="score" class="score">Score: 0</h3>
+      <h5 id="message" class="message">
+        Are you annoyed yet? <br />
+        You are playing an impossible game!!
+      </h5>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
