@@ -3,10 +3,6 @@ const text = document.getElementById("text");
 const scoreElement = document.getElementById("score");
 const timeElement = document.getElementById("time");
 const endgameElement = document.getElementById("end-game-container");
-const settingsButton = document.getElementById("settings-btn");
-const settings = document.getElementById("settings");
-const settingsForm = document.getElementById("settings-form");
-const difficultySelect = document.getElementById("difficulty");
 
 // List of words for game
 const words = [
@@ -30,16 +26,65 @@ const words = [
   "admit",
   "drag",
   "loving",
+  "accommodating",
+  "bibliography",
+  "communication",
+  "congratulation",
+  "deconstruction",
+  "extraordinary",
+  "infrastructure",
+  "multicultural",
+  "nonrefundable",
+  "optimization",
+  "revolutionary",
+  "satisfaction",
+  "teleconference",
+  "unbelievable",
+  "verification",
+  "wonderfulness",
+  "apple",
+  "banana",
+  "cherry",
+  "dog",
+  "elephant",
+  "frog",
+  "grape",
+  "house",
+  "igloo",
+  "jacket",
+  "kangaroo",
+  "lemon",
+  "monkey",
+  "notebook",
+  "octopus",
+  "penguin",
+  "quilt",
+  "rabbit",
+  "sunshine",
+  "tiger",
+  "umbrella",
+  "violin",
+  "watermelon",
+  "xylophone",
+  "yacht",
+  "zebra",
+  "astronaut",
+  "bicycle",
+  "caterpillar",
+  "dinosaur",
+  "engine",
+  "firetruck",
+  "garden",
+  "helicopter",
+  "iceberg",
+  "jungle",
+  "kite",
+  "lantern",
 ];
 
 let randomWord;
 let score = 0;
-let time = 10;
-// let difficulty = "medium";
-let difficulty =
-  localStorage.getItem("difficulty") !== null
-    ? localStorage.getItem("difficulty")
-    : "medium";
+let time = 30;
 
 const timeInterval = setInterval(updateTime, 1000);
 
@@ -71,7 +116,7 @@ function gameOver() {
     <h1>Time ran out</h1>
     <p>Your final score is ${score}</p>
     <button onclick="history.go(0)">Play Again</button>
-    `;
+  `;
   endgameElement.style.display = "flex";
 }
 
@@ -81,22 +126,8 @@ text.addEventListener("input", (e) => {
     e.target.value = "";
     addWordToDom();
     updateScore();
-    if (difficulty === "hard") time += 2;
-    else if (difficulty === "medium") time += 3;
-    else time += 5;
-    updateTime();
   }
 });
 
-settingsButton.addEventListener("click", () =>
-  settings.classList.toggle("hide")
-);
-settingsForm.addEventListener("change", (e) => {
-  difficulty = e.target.value;
-  localStorage.setItem("difficulty", difficulty);
-});
-
-// Init
-difficultySelect.value = difficulty;
 addWordToDom();
 text.focus();
